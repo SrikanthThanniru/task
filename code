@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Square Grid</title>
+    <style>
+        .grid {
+            display: grid;
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+            background-color: #ddd;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .square:hover {
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <label for="gridSize">Enter the size of the bigger square: </label>
+    <input type="number" id="gridSize" min="1" value="3">
+    <button onclick="createGrid()">Create Grid</button>
+    
+    <div class="grid" id="grid"></div>
+    
+    <script>
+        function createGrid() {
+            const gridSize = parseInt(document.getElementById('gridSize').value);
+            const gridElement = document.getElementById('grid');
+            
+            gridElement.innerHTML = '';
+            
+            for (let row = 0; row < gridSize; row++) {
+                for (let col = 0; col < gridSize; col++) {
+                    const square = document.createElement('div');
+                    square.classList.add('square');
+                    square.textContent = `${row + 1}, ${col + 1}`;
+                    square.addEventListener('click', () => {
+                        alert(`Clicked square: Row ${row + 1}, Column ${col + 1}`);
+                    });
+                    gridElement.appendChild(square);
+                }
+            }
+            
+            gridElement.style.gridTemplateColumns = `repeat(${gridSize}, 50px)`;
+            gridElement.style.gridTemplateRows = `repeat(${gridSize}, 50px)`;
+        }
+        
+        createGrid(); // Create initial grid with the default size
+    </script>
+</body>
+</html>
