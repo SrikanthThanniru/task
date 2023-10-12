@@ -1,1 +1,4 @@
 # task
+
+Make a square box of dimension 9X9 using SVG. You will ask the user to enter the dimension of the smaller square. Suppose the user enters 3. So there will be 9 squares each of dimensions 3X3. So if the user clicks inside 9X9 then that 3X3 square is highlighted  and  coordinates clicked are logged. Can you write a code for this?
+You can only hardcode the bigger square and the remaining squares should be calculated mathematically from the main squares. For example, in this case if we have 3x3 squares then there will be 9 squares and coordinates of each square will be calculated mathematically.  Suppose instead of 3 if I give 1x1 square then this should have handled this case also. I hope that you have got the problem. Another example can be if the user submits 18 then it should work. Output should be a working link where if we click on any square then we should see its coordinates
